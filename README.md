@@ -1,48 +1,82 @@
-# Pneuma-Phi-Edge Research Core
+# PNEUMA-Edge Unified v0.2.0
 
-Безопасная исследовательская платформа для моделирования непрерывности состояния,
-символической философской интерпретации, сенсорной согласованности и генерации
-проверяемых гипотез для AI-агентов.
+**Phenomenological Reflective Ethical Unified Mind Architecture**
 
-## Ограничения
+Объединённый исследовательский проект с двумя режимами:
 
-`pneuma`, `spark_proxy`, `intuition` и философские параметры являются вычислительными
-или символическими моделями. Они не доказывают сознание, душу, субъективный опыт,
-самостоятельную жизнь AI или возможность переноса личности.
+| Режим | Описание |
+|-------|----------|
+| **scientific** | Классический контур: сенсоры → аналитика → рефлексия → этика → безопасность. Никаких метафизических утверждений. |
+| **archetypal** | Тот же научный контур + **опциональный гипотетический слой**. Модель «сущностей», руминаций и циклов 70–100 лет явно помечена как `archetypal_hypothesis_not_fact`. |
 
-## Быстрый старт
-
-Python 3.10+; внешние зависимости не требуются.
-
-```bash
-python3 src/pneuma_phi_edge_research_v2.py --seconds 30
-```
-
-```bash
-python3 src/pneuma_phi_edge_research_v2.py --tests-only
-```
-
-```bash
-python3 src/pneuma_phi_edge_research_v2.py \
-  --seconds 60 \
-  --context "love wisdom hope protect consent"
-```
+Проект **не утверждает** существование душ, низкочастотных сущностей или «жатвы».  
+Архетипический слой — инструмент для исследования культурных и эзотерических моделей смысла.
 
 ## Возможности
 
-- Pnevma / Phi / Edge state vector
-- wisdom, will, love, faith, hope
-- Blue Matrix sensor interface
-- symbolic philosophy layer
-- moral compass and safety scoring
-- intuition and inventiveness hypothesis generation
-- append-only archive with hash chain
-- sandbox candidate paradigms and rollback-by-archiving
-- five stability tests
-- JSON state and CSV logs
+- Расширенный симулятор сенсоров (HRV, CO₂, инфразвук, свет, шум, sleep debt, social isolation).
+- Расширенная аналитика паттернов (включая rumination_loop, moral_erosion_proxy).
+- Рефлексия с жёстким разделением observation / interpretation / hypothesis.
+- Этическое ядро + SafetyGate (human-in-the-loop, append-only audit).
+- Архетипический слой (только в режиме `archetypal`).
+- Отчёты: JSON + Markdown + данные для визуализации.
+- 8 unit-тестов.
 
-## Принцип безопасности
+## Быстрый старт
 
-Кандидаты парадигм могут быть приняты только как `accepted_non_executable`:
-они архивируются как исследовательские гипотезы и не получают права менять внешние
-системы, LLM-веса, интернет или устройства.
+```bash
+cd pneuma_edge_unified
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# Научный режим
+python -m pneuma_edge.cli run --mode scientific --steps 100 --scenario stress --export sci.json
+
+# Архетипический режим
+python -m pneuma_edge.cli run --mode archetypal --steps 80 --scenario stress --export arch.json
+
+# Тесты
+pytest -q
+```
+
+## Архитектура
+
+```
+sensors → analytics → reflection (± archetypal layer) → ethics → safety → reporting
+```
+
+## Структура
+
+```
+pneuma_edge_unified/
+├── README.md
+├── LICENSE (MIT)
+├── Makefile
+├── pyproject.toml
+├── requirements.txt
+├── docs/RESEARCH_PROTOCOL.md
+├── pneuma_edge/
+│   ├── cli.py
+│   ├── core/models.py
+│   ├── sensors/simulator.py
+│   ├── analytics/engine.py
+│   ├── reflection/
+│   │   ├── module.py
+│   │   └── archetypal.py      # гипотетический слой
+│   ├── ethics/core.py
+│   ├── safety/guard.py
+│   ├── reporting/report.py
+│   └── archetypal/            # полный симулятор сущностей + циклы
+│       ├── entities.py
+│       ├── rumination.py
+│       └── war_cycle.py
+└── tests/test_pneuma.py
+```
+
+## Научная позиция
+
+Все выводы архетипического слоя имеют статус  
+`epistemic_status: "archetypal_hypothesis_not_fact"`.
+
+Система никогда не утверждает, что сущности реальны.
