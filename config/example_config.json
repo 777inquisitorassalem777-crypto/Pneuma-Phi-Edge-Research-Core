@@ -1,0 +1,5 @@
+{
+  "cycle_seconds": 0.5,
+  "run_seconds": 30.0,
+  "note": "Copy this file to the repository root as pneuma_phi_edge_v2_config.json to customize settings."
+}
