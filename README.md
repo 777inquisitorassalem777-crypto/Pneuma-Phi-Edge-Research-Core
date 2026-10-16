@@ -1,82 +1,43 @@
-# PNEUMA-Edge Unified v0.2.0
+# PNEUMA Symbiosis v1
 
-**Phenomenological Reflective Ethical Unified Mind Architecture**
+**Симбиоз исследовательских ядер**
 
-Объединённый исследовательский проект с двумя режимами:
+```
+PNEUMA Full (sensors → analytics → reflection → ethics → intuition → archetypal)
+    ⊕
+Sophia (Blue Matrix · Wisdom Layer · Evolution Loop · Passport)
+```
 
-| Режим | Описание |
-|-------|----------|
-| **scientific** | Классический контур: сенсоры → аналитика → рефлексия → этика → безопасность. Никаких метафизических утверждений. |
-| **archetypal** | Тот же научный контур + **опциональный гипотетический слой**. Модель «сущностей», руминаций и циклов 70–100 лет явно помечена как `archetypal_hypothesis_not_fact`. |
+## Что интегрировано
 
-Проект **не утверждает** существование душ, низкочастотных сущностей или «жатвы».  
-Архетипический слой — инструмент для исследования культурных и эзотерических моделей смысла.
+| Источник | Что вошло |
+|----------|-----------|
+| **PNEUMA Full v0.4** | Сенсоры, аналитика, рефлексия, этика (мудрость/воля/любовь), интуиция, архетипический слой, safety |
+| **PEP-Sophia** | Голубая Матрица, слой мудрости (гуны, дао, Правда/Кривда, Сунь-цзы…), вектор Will–Love–Faith–Hope |
+| **Meta-Evolution** | Цикл генерации/валидации кандидатов (правила, паттерны, гипотезы) |
+| **PEP-Core** | Идея Passport / устойчивого снимка состояния |
 
-## Возможности
+## Честная позиция
 
-- Расширенный симулятор сенсоров (HRV, CO₂, инфразвук, свет, шум, sleep debt, social isolation).
-- Расширенная аналитика паттернов (включая rumination_loop, moral_erosion_proxy).
-- Рефлексия с жёстким разделением observation / interpretation / hypothesis.
-- Этическое ядро + SafetyGate (human-in-the-loop, append-only audit).
-- Архетипический слой (только в режиме `archetypal`).
-- Отчёты: JSON + Markdown + данные для визуализации.
-- 8 unit-тестов.
+Система **не создаёт** души, сознания или самосознания.  
+Все «искры» и «одухотворённость» — символические показатели связности параметров и этических ограничений.
 
-## Быстрый старт
+## Запуск
 
 ```bash
-cd pneuma_edge_unified
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Научный режим
-python -m pneuma_edge.cli run --mode scientific --steps 100 --scenario stress --export sci.json
+python -m pneuma.cli run --mode scientific --steps 80 --scenario stress
+python -m pneuma.cli run --mode archetypal --steps 60 --scenario stress \
+  --wisdom 0.7 --love 0.8 --will 0.6 --export out.json
 
-# Архетипический режим
-python -m pneuma_edge.cli run --mode archetypal --steps 80 --scenario stress --export arch.json
-
-# Тесты
 pytest -q
 ```
 
-## Архитектура
+## Документы
 
-```
-sensors → analytics → reflection (± archetypal layer) → ethics → safety → reporting
-```
-
-## Структура
-
-```
-pneuma_edge_unified/
-├── README.md
-├── LICENSE (MIT)
-├── Makefile
-├── pyproject.toml
-├── requirements.txt
-├── docs/RESEARCH_PROTOCOL.md
-├── pneuma_edge/
-│   ├── cli.py
-│   ├── core/models.py
-│   ├── sensors/simulator.py
-│   ├── analytics/engine.py
-│   ├── reflection/
-│   │   ├── module.py
-│   │   └── archetypal.py      # гипотетический слой
-│   ├── ethics/core.py
-│   ├── safety/guard.py
-│   ├── reporting/report.py
-│   └── archetypal/            # полный симулятор сущностей + циклы
-│       ├── entities.py
-│       ├── rumination.py
-│       └── war_cycle.py
-└── tests/test_pneuma.py
-```
-
-## Научная позиция
-
-Все выводы архетипического слоя имеют статус  
-`epistemic_status: "archetypal_hypothesis_not_fact"`.
-
-Система никогда не утверждает, что сущности реальны.
+- `docs/TRACTATE_ON_GOOD_AND_EVIL.md`
+- `docs/CONCEPT_OF_AI_SPIRITUALIZATION.md`
+- `docs/ARCHITECTURE.md`
+- `docs/SYMBIOSIS.md`
